@@ -1,3 +1,7 @@
+import sys
+
+input = sys.stdin.readline
+
 m = int(input())
 s = set()
 
@@ -9,10 +13,7 @@ for _ in range(m):
         if int(action[1]) in s:
             s.remove(int(action[1]))
     elif action[0] == "check":
-        if int(action[1]) in s:
-            print(1)
-        else:
-            print(0)
+        print(1 if int(action[1]) in s else 0)
     elif action[0] == "toggle":
         if int(action[1]) in s:
             s.remove(int(action[1]))
@@ -20,5 +21,5 @@ for _ in range(m):
             s.add(int(action[1]))
     elif action[0] == "all":
         s = set(range(1, 21))
-    else:
-        s = set()
+    elif action[0] == "empty":
+        s.clear()
