@@ -1,3 +1,7 @@
+import sys
+
+input = sys.stdin.readline
+
 N = int(input())
 time = []
 meeting = 0
