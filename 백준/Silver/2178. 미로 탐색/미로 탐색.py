@@ -4,7 +4,7 @@ import sys
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
-maze = [[int(x) for x in str(input().strip())] for _ in range(n)]
+maze = [[int(x) for x in input().strip()] for _ in range(n)]
 queue = deque([(0, 0)])
 
 directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
