@@ -2,11 +2,18 @@ n = int(input())
 m = int(input())
 s = input()
 
-pn = "IO" * n + "I"
+pattern_length = 0
 count = 0
+i = 0
 
-for i in range(m - 2 * n):
-    if s[i:i + 2 * n + 1] == pn:
-        count += 1
+while i < m - 1:
+    if s[i:i + 3] == "IOI":
+        pattern_length += 1
+        if pattern_length >= n:
+            count += 1
+        i += 2
+    else:
+        pattern_length = 0
+        i += 1
 
 print(count)
