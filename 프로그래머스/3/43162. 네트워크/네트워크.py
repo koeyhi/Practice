@@ -4,12 +4,13 @@ def solution(n, computers):
     
     def dfs(node):
         visited[node] = True
-        for connect in range(n):
-            if computers[node][connect] == 1 and not visited[connect]:
-                dfs(connect)
+        
+        for i in range(n):
+            if computers[node][i] == 1 and visited[i] == False:
+                dfs(i)
     
     for i in range(n):
-        if not visited[i]:
+        if visited[i] == False:
             dfs(i)
             answer += 1
     
